@@ -11,10 +11,10 @@ public class Cuenta {
     double saldo;
     List <Movimiento> mMovimientos;
     
-	public Cuenta(String mNumero, String nTitular){
+	public Cuenta(String mNumero, String nTitular, double saldo){
 		this.mNumero = mNumero;
 		this.nTitular = nTitular;
-		saldo = 0;
+		this.saldo = saldo;
 		mMovimientos = new ArrayList<>();
 	}
 	
@@ -27,7 +27,7 @@ public class Cuenta {
 	
 	public void retirar(double x) {
 		if(saldo - x < -500) {
-			System.out.println("Saldo insuficiente");
+			System.out.println("Saldo insuficiente (saldo " + saldo + ") en la cuenta " + mNumero + " para el reintegro de " + x + "€");
 		}else {
 			saldo -= x;
 			Signo signo = Signo.D;
