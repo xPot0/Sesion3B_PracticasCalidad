@@ -66,6 +66,32 @@ class CuentaTest {
 		assertEquals(-500,cuenta.getSaldo());
 	}
 	
-	
+	@Test
+	void test0014() {
+		c12345.retirar(200);
+		assertEquals(-150,c12345.getSaldo());
+		
+		c67890.retirar(350);
+		assertEquals(-350,c67890.getSaldo());
+		
+		c12345.ingresar(100);
+		assertEquals(-50,c12345.getSaldo());
+		
+		c67890.retirar(200);
+		assertEquals(-350,c67890.getSaldo());
+		
+		c67890.retirar(150);
+		assertEquals(-500,c67890.getSaldo());
+		
+		c12345.retirar(200);
+		assertEquals(-250,c12345.getSaldo());
+		
+		c67890.ingresar(50);
+		assertEquals(-450,c67890.getSaldo());
+		
+		c67890.retirar(100);
+		assertEquals(-450,c67890.getSaldo());
+		
+	}
 	
 }
